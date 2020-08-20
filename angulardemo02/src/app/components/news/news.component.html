@@ -1,4 +1,5 @@
 <!-- 绑定数据,如果时动态属性，需要用到中括号[] -->
+<h2>绑定数据,如果时动态属性，需要用到中括号[]</h2>
 <p [title]="title">{{title}}</p>
 <p>{{msg}}</p>
 <p>{{username}}</p>
@@ -6,13 +7,15 @@
 <p>message:{{message}}</p>
 <hr>
 <!-- 绑定html -->
+<h2>绑定html</h2>
 <p [innerHTML]="htmlC"></p>
 <hr>
 <!-- 循环数据 -->
-<!-- 1循环数组 -->
+<h2>循环数据</h2>
+<!-- 1循环数组并且显示索引 -->
 <ul>
-    <li *ngFor="let item of arr;">
-        {{item}}
+    <li *ngFor="let item of arr;let in=index">
+        {{in}}-{{item}}
     </li>
 </ul>
 <ol>
@@ -27,3 +30,45 @@
     </li>
 </ul>
 <hr>
+<!-- 引入图片 -->
+<h2>引入图片</h2>
+<!-- 1引入本地图片 -->
+<img src="assets/images/Chaetodon-kleinii.jpg" width="100" alt="Chaetodon-kleinii.jpg">
+<!-- 2引入远程图片 -->
+<img [src]="picUrl" width="100" alt="picUrl">
+<hr>
+<!-- 条件判断 -->
+<h2>条件判断1</h2>
+<div *ngIf="showText">我能被显示，showText为true</div>
+<div *ngIf="!showText">我能被显示，showText为false</div>
+<h2>条件判断2</h2>
+<div [ngSwitch]="myOrder">
+    <div *ngSwitchCase="0">failure</div>
+    <div *ngSwitchCase="1">success</div>
+    <div *ngSwitchCase="2">waiting</div>
+    <div *ngSwitchDefault>waiting</div>
+</div>
+<hr>
+<!-- 属性ngClass,ngStyle -->
+<h2>属性ngClass,ngStyle</h2>
+<div [ngClass]="{red: fontColor==='red', green:fontColor==='green'}">
+    ngclass我是用来演示样式的文字
+</div>
+<div [ngStyle]="{color: fontColor2}">
+    ngstyle我是用来演示样式的文字
+</div>
+<hr>
+<!-- 管道：可以对数据进行处理-->
+<h2>管道</h2>
+<div>时间：{{today | date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+<hr>
+<!-- 事件 -->
+<h2>事件</h2>
+<strong>title:{{title}}</strong>
+<button (click)="run()">点我会触发绑定的事件</button>
+<button (click)="getData()">获取数据</button>
+<button (click)="setData()">改变数据</button>
+<input type="text" (keydown)="keyDown($event)">
+<!-- 双向事件绑定 -->
+<h2>双向事件绑定</h2>
+<input [(ngModel)]="inputValue">  {{inputValue}}

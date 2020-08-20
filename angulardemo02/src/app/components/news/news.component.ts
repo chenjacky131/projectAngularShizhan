@@ -5,6 +5,7 @@ interface userObj{ //  对象接口，定义一个变量为对象时，最好用
   age:number,
   sex:string
 }
+enum orderState{failure=0,success=1,waiting=2}
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -24,7 +25,7 @@ export class NewsComponent implements OnInit {
     'sex': 'male'
   }
   public message:any
-  public htmlC = '<h1>html标签值</h1>'
+  public htmlC = '<span>html标签值</span>'
   //  定义数组
   public arr:string[] =['11','22']
   public items:Array<number> = [1,2,3]
@@ -33,6 +34,14 @@ export class NewsComponent implements OnInit {
     'age': 18,
     'sex': 'M'
   }
+  // 定义图片地址
+  public picUrl = 'https://i1.wp.com/www.jackchen7003.com/wp-content/uploads/2020/08/Paragobiodon-xanthosoma.jpg?w=801'
+  public showText:boolean = false
+  public myOrder = orderState.waiting
+  public fontColor = 'green'
+  public fontColor2 = 'green'
+  public today:any = new Date()
+  public inputValue:string = '默认值'
   constructor() {
     this.message = '改变属性message的值'
   }
@@ -40,4 +49,16 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  run(){
+    alert('执行方法')
+  }
+  getData(){
+    alert(this.title)
+  }
+  setData(){
+    this.title = '我被修改了'
+  }
+  keyDown(e){
+    console.log(e)
+  }
 }
