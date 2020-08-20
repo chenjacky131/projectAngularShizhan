@@ -1,0 +1,29 @@
+<!-- 绑定数据,如果时动态属性，需要用到中括号[] -->
+<p [title]="title">{{title}}</p>
+<p>{{msg}}</p>
+<p>{{username}}</p>
+<p>年龄：{{userInfo.age}} 性别：{{userInfo.sex}}</p>
+<p>message:{{message}}</p>
+<hr>
+<!-- 绑定html -->
+<p [innerHTML]="htmlC"></p>
+<hr>
+<!-- 循环数据 -->
+<!-- 1循环数组 -->
+<ul>
+    <li *ngFor="let item of arr;">
+        {{item}}
+    </li>
+</ul>
+<ol>
+    <li *ngFor="let item of items">
+        {{item}}
+    </li>
+</ol>
+<!-- 2循环对象 --> 
+<ul>
+    <li *ngFor="let item of obj|keyvalue">
+        {{item.key}} -- {{item.value}}
+    </li>
+</ul>
+<hr>
