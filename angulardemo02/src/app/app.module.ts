@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NewsComponent } from './components/news/news.component';
 import { FormComponent } from './components/form/form.component';
 import { SearchComponent } from './components/search/search.component';
+import { TodolistComponent } from './components/todolist/todolist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsComponent,
     FormComponent,
-    SearchComponent
+    SearchComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
