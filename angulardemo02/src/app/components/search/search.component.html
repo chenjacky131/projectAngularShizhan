@@ -1,5 +1,5 @@
 <div>
-    <input type="text" [(ngModel)]="keyword"> <button (click)="doSearch()">搜索</button>
+    <input type="text" [(ngModel)]="keyword" (keyup)="inputSearch($event)"> <button (click)="doSearch()">搜索</button>
     <hr>
     <ul>
         <li *ngFor="let history of historyList;let ind = index;">

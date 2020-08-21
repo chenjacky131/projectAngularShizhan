@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { StorageService } from '../../services/storage.service'
 @Component({
   selector: 'app-todolist',
   templateUrl: './todolist.component.html',
@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class TodolistComponent implements OnInit {
   public keyword:string = ''
   public todolist:any[] =[]
-  constructor() { }
+  constructor(public storage:StorageService) { }
 
   ngOnInit(): void {
+    this.todolist = this.storage.get('todolist')?this.storage.get('todolist'):[]
   }
   doAdd(e){
     if(e.keyCode === 13){
@@ -22,6 +23,7 @@ export class TodolistComponent implements OnInit {
           title: this.keyword,
           status: false
         })
+        this.storage.set('todolist', this.todolist)
       }
       this.keyword = ''
     }
@@ -36,5 +38,9 @@ export class TodolistComponent implements OnInit {
   }
   deleteItem(index){
     this.todolist.splice(index,1)
+    this.storage.set('todolist', this.todolist)
+  }
+  handleChange(index){
+    this.storage.set('todolist', this.todolist)
   }
 }

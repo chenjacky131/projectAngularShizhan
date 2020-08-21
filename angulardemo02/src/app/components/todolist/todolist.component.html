@@ -6,7 +6,7 @@
     <ul>
         <ng-template ngFor let-item [ngForOf]="todolist" let-index="index">
             <li *ngIf="!item.status">
-                <input type="checkbox" [(ngModel)]="item.status" name="todolistItem" [id]="'list'+index"> <label [for]="'list'+index">{{item.title}}</label>  ----    <button (click)="deleteItem(key)">X</button>
+                <input type="checkbox" [(ngModel)]="item.status" (change)="handleChange(index)" name="todolistItem" [id]="'list'+index"> <label [for]="'list'+index">{{item.title}}</label>  ----    <button (click)="deleteItem(key)">X</button>
             </li>
         </ng-template>
     </ul>    
