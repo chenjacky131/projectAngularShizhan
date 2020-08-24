@@ -4,3 +4,5 @@
 <div id="box" #mybox>
     this is box 
 </div>
+<hr>
+<app-footer [msg]="msg" [fun]="run" [home]="this" (outer)="run($event)"></app-footer>

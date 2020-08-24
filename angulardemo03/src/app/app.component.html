@@ -7,9 +7,12 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<app-home></app-home>
+<!-- <app-transition></app-transition>
+<hr> -->
+<!-- <app-home></app-home> -->
+<app-lifetime *ngIf="flag" [tit]="tit"></app-lifetime>
 <hr>
-<app-transition></app-transition>
+我是app父组件 <button (click)="changeTit()">改变父组件的数据</button> <button (click)="hideLifetime()">显示/隐藏applifetime组件</button>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
