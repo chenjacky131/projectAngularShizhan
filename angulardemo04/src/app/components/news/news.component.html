@@ -1,0 +1,16 @@
+<div>
+    news组件 <br>
+    <button (click)="getDataJsonP()">获取数据</button> <br>
+    <button (click)="getDataPost()">插入数据</button>
+    <hr>
+    <ul>
+        <li *ngFor="let item of list">
+            {{item.title}}:
+            <ol>
+                <li *ngFor="let subitem of item.list">
+                    {{subitem.title}}
+                </li>
+            </ol>
+        </li>
+    </ul>
+</div>
