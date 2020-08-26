@@ -1,0 +1,15 @@
+<h3>我是nesw组件</h3>
+<ul>
+    <li *ngFor="let item of list">
+        <a [routerLink]="['/newsDetail']" [queryParams]="{id:item}">新闻详情 {{item}}</a>
+    </li>
+</ul>
+<div>动态路由</div>
+<ul>
+    <li *ngFor="let item of list">
+        <a [routerLink]="['/newsDetail',item]">新闻详情 {{item}}</a>
+    </li>
+</ul>
+<div>JS跳转路由</div>
+<button (click)="goNews(100)">动态路由：新闻详情100</button>
+<button (click)="goNewsQuery()">queryParams路由：新闻详情200</button>
