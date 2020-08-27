@@ -1,0 +1,14 @@
+<h3>嵌套组件页面</h3>
+<div class="wrap">
+    <ul class="nav-list">
+        <li>
+            <a [routerLink]="['/childRouter/child1']" routerLinkActive="router-link-active">嵌套子路由1</a>
+        </li>
+        <li>
+            <a [routerLink]="['/childRouter/child2']" routerLinkActive="router-link-active">嵌套子路由2</a>
+        </li>
+    </ul>
+    <div class="router-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

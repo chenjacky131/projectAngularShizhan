@@ -1,0 +1,18 @@
+.wrap{
+    overflow: hidden;
+    background: #eee;
+}
+.nav-list{
+    float: left;
+    margin: 0;
+}
+.router-content{
+    margin-left: 20px;
+    padding-left: 20px;
+    float: left;
+    border-left: 1px solid #000;
+    height: 300px;
+}
+.router-link-active{
+    color:#0f0;
+}
